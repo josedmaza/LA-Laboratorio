@@ -5,7 +5,7 @@ import InstragramIcon from "../icons/Instagram.astro";
 import WhatsappIcon from "../icons/Whatsapp.astro";
 import MailIcon from "../icons/Mail.astro";
 import MapIcon from "../icons/Map.astro";
-import { getPublicPath } from "../utils/paths";
+import { getPublicPath, getPagePath } from "../utils/paths";
 
 ---
 
@@ -31,21 +31,21 @@ import { getPublicPath } from "../utils/paths";
       <ul class="space-y-2 text-sm">
         <li>
           <a
-            href="/combos"
+            href={getPagePath("/combos")}
             class="hover:underline hover:text-blue-700 transition"
             >Combos de laboratorio</a
           >
         </li>
         <li>
           <a
-            href="/"
+            href={getPagePath("/")}
             class="hover:underline hover:text-blue-700 transition"
             >Inicio</a
           >
         </li>
         <li>
           <a
-            href="/contacto"
+            href={getPagePath("/contacto")}
             class="hover:underline hover:text-blue-700 transition"
             >Contacto</a
           >
@@ -57,21 +57,21 @@ import { getPublicPath } from "../utils/paths";
       <ul class="space-y-2 text-sm">
         <li>
           <a
-            href="/quienes_somos"
+            href={getPagePath("/quienes_somos")}
             class="hover:underline hover:text-blue-700 transition"
             >Nosotros</a
           >
         </li>
         <li>
           <a
-            href="/combos"
+            href={getPagePath("/combos")}
             class="hover:underline hover:text-blue-700 transition"
             >Combos</a
           >
         </li>
         <li>
           <a
-            href="/contacto"
+            href={getPagePath("/contacto")}
             class="hover:underline hover:text-blue-700 transition"
             >Contacto</a
           >
