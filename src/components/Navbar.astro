@@ -1,12 +1,13 @@
 ---
-const { title = "Navbar" } = Astro.props;
+
+import { getImage } from "astro:assets";
 ---
 
 <nav class="navbar-main  w-full z-50">
   <div class="container  px-8 py-1 flex  justify-evenly">
     <a href="/" class="flex items-center gap-3">
       <img
-        src="/img/logo2.png"
+        src={`${import.meta.env.BASE_URL}img/logo2.png`}
         class="w-32 h-16"
         alt="Laboratorio Clinico logo"
       />
