@@ -1,22 +1,23 @@
 ---
-
 import { getImage } from "astro:assets";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <nav class="navbar-main  w-full z-50">
   <div class="container  px-8 py-1 flex  justify-evenly">
-    <a href="/" class="flex items-center gap-3">
+    <a href={baseUrl} class="flex items-center gap-3">
       <img
-        src={`${import.meta.env.BASE_URL}img/logo2.png`}
+        src={`${baseUrl}img/logo2.png`}
         class="w-32 h-16"
         alt="Laboratorio Clinico logo"
       />
     </a>
     <div class="hidden md:flex gap-10 items-center">
-      <a href="/" class="nav-link">Inicio</a>
-      <a href="/quienes_somos" class="nav-link">Quiénes somos</a>
-      <a href="/combos" class="nav-link">Combos</a>
-      <a href="/contacto" class="nav-link">Contacto</a>
+      <a href={baseUrl} class="nav-link">Inicio</a>
+      <a href={`${baseUrl}quienes_somos`} class="nav-link">Quiénes somos</a>
+      <a href={`${baseUrl}combos`} class="nav-link">Combos</a>
+      <a href={`${baseUrl}contacto`} class="nav-link">Contacto</a>
     </div>
     <button id="menu-toggle" class="md:hidden focus:outline-none">
       <svg
@@ -38,10 +39,10 @@ import { getImage } from "astro:assets";
     id="mobile-menu"
     class="fixed top-0 left-0 w-full h-screen bg-white dark:bg-gray-900 bg-opacity-95 flex flex-col items-center justify-center gap-8 z-40 hidden transition-colors duration-300"
   >
-    <a href="/" class="nav-link text-2xl">Inicio</a>
-    <a href="/quienes_somos" class="nav-link text-2xl">Quiénes somos</a>
-    <a href="/combos" class="nav-link text-2xl">Combos</a>
-    <a href="/contacto" class="nav-link text-2xl">Contacto</a>
+    <a href={baseUrl} class="nav-link text-2xl">Inicio</a>
+    <a href={`${baseUrl}quienes_somos`} class="nav-link text-2xl">Quiénes somos</a>
+    <a href={`${baseUrl}combos`} class="nav-link text-2xl">Combos</a>
+    <a href={`${baseUrl}contacto`} class="nav-link text-2xl">Contacto</a>
     <button id="close-menu" class="mt-10 text-blue-700 dark:text-blue-200 text-lg">Cerrar</button>
   </div>
 </nav>

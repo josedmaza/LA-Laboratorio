@@ -6,6 +6,7 @@ import WhatsappIcon from "../icons/Whatsapp.astro";
 import MailIcon from "../icons/Mail.astro";
 import MapIcon from "../icons/Map.astro";
 
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <footer class="bg-gray-50 text-gray-700 border-t border-gray-200  pt-10 pb-4">
@@ -13,7 +14,7 @@ import MapIcon from "../icons/Map.astro";
     <div class="flex flex-col gap-3">
       <div class="flex items-center gap-3 mb-2">
         <img
-          src={`${import.meta.env.BASE_URL}img/logo2.png`}
+          src={`${baseUrl}img/logo2.png`}
           class="w-28 h-12"
           alt="Laboratorio Clinico logo"
         />
