@@ -1,0 +1,134 @@
+---
+import SocialPill from "./SocialPill.astro";
+import FacebookIcon from "../icons/Facebook.astro";
+import InstragramIcon from "../icons/Instagram.astro";
+import WhatsappIcon from "../icons/Whatsapp.astro";
+import MailIcon from "../icons/Mail.astro";
+import MapIcon from "../icons/Map.astro";
+
+---
+
+<footer class="bg-gray-50 text-gray-700 border-t border-gray-200  pt-10 pb-4">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-10 items-start">
+    <div class="flex flex-col gap-3">
+      <div class="flex items-center gap-3 mb-2">
+        <img
+          src="/img/logo2.png"
+          class="w-28 h-12"
+          alt="Laboratorio Clinico logo"
+        />
+      </div>
+      <span class="italic text-gray-500 text-sm mb-2"
+        >Más de 25 años evolucionando la salud de nuestra comunidad</span
+      >
+      <div class="flex items-center gap-2 text-xs text-gray-500">
+        <MapIcon class="w-4 h-4 text-blue-700" /> Cartagena, Colombia
+      </div>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-3">Servicios</h3>
+      <ul class="space-y-2 text-sm">
+        <li>
+          <a
+            href="/combos"
+            class="hover:underline hover:text-blue-700 transition"
+            >Combos de laboratorio</a
+          >
+        </li>
+        <li>
+          <a
+            href="/"
+            class="hover:underline hover:text-blue-700 transition"
+            >Inicio</a
+          >
+        </li>
+        <li>
+          <a
+            href="/contacto"
+            class="hover:underline hover:text-blue-700 transition"
+            >Contacto</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-3">Empresa</h3>
+      <ul class="space-y-2 text-sm">
+        <li>
+          <a
+            href="/quienes_somos"
+            class="hover:underline hover:text-blue-700 transition"
+            >Nosotros</a
+          >
+        </li>
+        <li>
+          <a
+            href="/combos"
+            class="hover:underline hover:text-blue-700 transition"
+            >Combos</a
+          >
+        </li>
+        <li>
+          <a
+            href="/contacto"
+            class="hover:underline hover:text-blue-700 transition"
+            >Contacto</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-semibold mb-3">Contacto</h3>
+      <ul class="space-y-3">
+        <li>
+          <a
+            href="mailto:rosarioarnedolab@yahoo.com"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-gray-700 hover:text-blue-500 transition text-sm"
+          >
+            <MailIcon class="w-5 h-5 flex-shrink-0" />
+            <span>Email</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/LaboratorioRosarioArnedo?locale=es_LA"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-gray-700 hover:text-blue-600 transition text-sm"
+          >
+            <FacebookIcon class="w-5 h-5 flex-shrink-0" />
+            <span>Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.instagram.com/laboratoriorosarioarnedopombo/"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-gray-700 hover:text-pink-600 transition text-sm"
+          >
+            <InstragramIcon class="w-5 h-5 flex-shrink-0" />
+            <span>Instagram</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://wa.me/573165264526?text=Hola%20%F0%9F%91%8B%20Me%20gustar%C3%ADa%20contactarme%20con%20ustedes%20para%20m%C3%A1s%20informaci%C3%B3n"
+            target="_blank"
+            class="inline-flex items-center gap-2 text-gray-700 hover:text-green-500 transition text-sm"
+          >
+            <WhatsappIcon class="w-5 h-5 flex-shrink-0" />
+            <span>WhatsApp</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+  <hr class="my-6 border-gray-200" />
+  <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+    <span>© 2026 Rosario Arnedo Pombo. Todos los derechos reservados.</span>
+    <span class="italic text-right mt-2 md:mt-0"
+      >Construir. Lanzar. Evolucionar. Repetir.</span
+    >
+  </div>
+</footer>

@@ -1,0 +1,46 @@
+---
+import Check from "../icons/Check.astro";
+---
+
+<header 
+  class="relative bg-cover bg-center bg-no-repeat w-full bg-cyan-50"
+  style="background-image: url('/components/assets/img/fondo-banner-3.jpg')"
+>
+  <!-- Overlay opcional para mejorar la legibilidad del texto -->
+ 
+  
+  <div class="relative z-10">
+  
+    <div class="h-auto md:h-190 mt-12 px-4 sm:px-8">
+      <div class="max-w-7xl flex flex-col items-start justify-start h-full mx-auto py-20">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-left text-[#009FE3] animate-bounce-in">
+          Laboratorio Clínico
+        </h1>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-5 text-left text-[#101828] lg:w-3/4 animate-fade-in-up" style="animation-delay: 0.2s">
+          <span class="text-[#101828]">Más de 25 años de dedicación <br></span> al servicio de la salud
+        </h2>
+        <ul class="text-[#101828] text-lg sm:text-xl md:text-2xl mt-5 text-left grid gap-2">
+          <li class="flex items-center gap-2 animate-fade-in-up stagger-item">
+            <!-- Ícono de check (puedes usar SVG o ícono de tu elección) -->
+            <svg class="text-[#009FE3] w-6 h-6 animate-floating" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <p>Servicio a domicilio</p>
+          </li>
+          <li class="flex items-center gap-2 animate-fade-in-up stagger-item">
+            <svg class="text-[#009FE3] w-6 h-6 animate-floating" style="animation-delay: 0.3s" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Diagnósticos confiables y rápidos</span>
+          </li>
+          <li class="flex items-center gap-2 animate-fade-in-up stagger-item">
+            <svg class="text-[#009FE3] w-6 h-6 animate-floating" style="animation-delay: 0.6s" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span>Atención personalizada</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>

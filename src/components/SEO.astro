@@ -1,0 +1,30 @@
+---
+// Componente para agregar a cada página
+// Uso: <SEO title="..." description="..." url="/ruta" />
+interface Props {
+  title?: string;
+  description?: string;
+  url?: string;
+  image?: string;
+}
+
+const { 
+  title = "Laboratorio Clínico Rosario Arnedo Pombo",
+  description = "Más de 25 años brindando diagnósticos confiables",
+  url = "/",
+  image = "/og-image.png"
+} = Astro.props;
+
+const canonicalURL = new URL(url, Astro.site);
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:image" content={image} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+<link rel="canonical" href={canonicalURL} />

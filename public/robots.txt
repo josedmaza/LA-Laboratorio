@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+
+Sitemap: https://laboratoriorosarioarnedo.com/sitemap.xml
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Delay for other crawlers
+User-agent: *
+Crawl-delay: 1

@@ -1,0 +1,84 @@
+---
+import PhoneIcon from "../icons/Phone.astro";
+import InfoPill from "./InfoPill.astro";
+import MailIcon from "../icons/Mail.astro";
+import MapIcon from "../icons/Map.astro";
+---
+
+<section class="bg-white">
+  <div class="flex flex-wrap gap-10 my-30 justify-center">
+    <div class="card-info fade-in-up">
+      <h2 class="card-title">Cartagena</h2>
+      <InfoPill>
+        <PhoneIcon class="w-5 h-5 text-blue-700" /> +57 3012306332
+      </InfoPill>
+      <InfoPill>
+        <MailIcon class="w-5 h-5 text-blue-700" /> rosarioarnedolab@yahoo.com
+      </InfoPill>
+      <InfoPill>
+        <MapIcon class="w-12 h-12 text-blue-700" /> Centro médico Santa Lucía local 504 Carrera 71 # 31-297
+      </InfoPill>
+    </div>
+    <div class="card-info fade-in-up">
+      <h2 class="card-title">Turbaco</h2>
+      <InfoPill>
+        <PhoneIcon class="w-5 h-5 text-blue-700" /> +57 3044552364
+      </InfoPill>
+      <InfoPill>
+        <MailIcon class="w-5 h-5 text-blue-700" /> rosarioarnedolab@yahoo.com
+      </InfoPill>
+      <InfoPill>
+        <MapIcon class="w-5 h-5 text-blue-700" /> Calle de las flores # 15-25
+      </InfoPill>
+    </div>
+  </div>
+  <div>
+    <iframe
+      src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=laboratorio%20clicico%20rosario%20arnedo+(My%20Business%20Name)&t=&z=16&ie=UTF8&iwloc=B&output=embed"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"></iframe>
+  </div>
+</section>
+
+<style>
+.card-info {
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px 0 rgba(0, 60, 120, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.04);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.35s cubic-bezier(.4,0,.2,1), background 0.35s;
+  position: relative;
+  min-width: 300px;
+  max-width: 350px;
+  z-index: 1;
+}
+.card-info:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 32px 0 rgba(0, 60, 120, 0.18), 0 3px 12px 0 rgba(0,0,0,0.08);
+  background: linear-gradient(90deg, #e3f0ff 0%, #f8fbff 100%);
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1565c0;
+  margin-bottom: 1rem;
+  letter-spacing: 0.01em;
+  transition: color 0.3s;
+}
+.card-info:hover .card-title {
+  color: #0d47a1;
+}
+@media (max-width: 900px) {
+  .flex-wrap {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>

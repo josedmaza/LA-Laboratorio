@@ -1,22 +1,136 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import { ClientRouter } from "astro:transitions";
+---
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<!doctype html>
+<html lang="es">
+  <head>
+    <ClientRouter />
+    <title>Laboratorio Clínico - Calidad y Confianza en Diagnóstico</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Laboratorio Clínico Rosario Arnedo Pombo - Más de 25 años brindando diagnósticos confiables en Cartagena y Turbaco. Exámenes de sangre, análisis clínicos y atención personalizada." />
+    <meta name="keywords" content="laboratorio clínico, análisis de sangre, exámenes médicos, Cartagena, Turbaco, diagnósticos, pruebas clínicas" />
+    <meta name="author" content="Laboratorio Clínico Rosario Arnedo Pombo" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="theme-color" content="#0369a1" />
+    
+    <!-- Open Graph para redes sociales -->
+    <meta property="og:title" content="Laboratorio Clínico Rosario Arnedo Pombo" />
+    <meta property="og:description" content="Más de 25 años de experiencia en diagnósticos confiables y atención personalizada" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Laboratorio Clínico Rosario Arnedo Pombo" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Laboratorio Clínico Rosario Arnedo Pombo" />
+    <meta name="twitter:description" content="Diagnósticos confiables con más de 25 años de experiencia" />
+    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalBusiness",
+      "name": "Laboratorio Clínico Rosario Arnedo Pombo",
+      "description": "Laboratorio clínico con más de 25 años de experiencia en diagnósticos",
+      "url": "https://laboratoriorosarioarnedo.com",
+      "telephone": "+573165264526",
+      "email": "rosarioarnedolab@yahoo.es",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Centro Médico Santa Lucía, piso 5, local 505",
+          "addressLocality": "Cartagena",
+          "addressRegion": "Bolívar",
+          "addressCountry": "CO"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle Las Flores #15-25",
+          "addressLocality": "Turbaco",
+          "addressRegion": "Bolívar",
+          "addressCountry": "CO"
+        }
+      ],
+      "areaServed": ["Cartagena", "Turbaco"],
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "16:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "07:00",
+          "closes": "12:00"
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body class=>
+    <Navbar />
+    <slot />
+    <Footer />
+    <script>
+  function initReveal() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add("animate-fade-in-up");
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    document.querySelectorAll(".fade-in-up").forEach((el) => observer.observe(el));
+  }
+
+  function initTheme() {
+    if (localStorage.getItem("theme") === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }
+
+  function initAll() {
+    initReveal();
+    initTheme();
+  }
+
+  initAll();
+  document.addEventListener("astro:page-load", initAll);
+</script>
+
+<style is:global>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    overflow: visible !important;
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    will-change: opacity, transform;
+    transition: opacity 0.8s cubic-bezier(.4,0,.2,1);
+  }
+
+  .animate-fade-in-up {
+    opacity: 1 !important;
+  }
 </style>
+  </body>
+</html>

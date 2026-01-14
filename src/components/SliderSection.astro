@@ -1,0 +1,90 @@
+---
+// Tarjetas informativas con animaciones y efectos modernos
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto py-12">
+  <div class="card-info fade-in-up">
+    <img src="/img/hemograma.jpg" alt="Exámenes de Sangre" class="card-img" />
+    <h2 class="card-title">Exámenes de Sangre</h2>
+    <p class="card-desc">Análisis completos y precisos con tecnología de vanguardia. Resultados confiables para tu salud.</p>
+  </div>
+  <div class="card-info fade-in-up">
+    <img src="/img/foto10.jpg" alt="Diagnósticos Rápidos" class="card-img" />
+    <h2 class="card-title">Diagnósticos Rápidos</h2>
+    <p class="card-desc">Obtén tus resultados en tiempo récord sin comprometer la calidad y precisión de nuestros análisis.</p>
+  </div>
+  <div class="card-info fade-in-up">
+    <img src="/img/foto5.jpg" alt="Atención Personalizada" class="card-img" />
+    <h2 class="card-title">Atención Personalizada</h2>
+    <p class="card-desc">Nuestro equipo de profesionales te brinda un servicio adaptado a tus necesidades específicas.</p>
+  </div>
+  <div class="card-info fade-in-up">
+    <img src="/img/foto6.jpg" alt="Servicio a Domicilio" class="card-img" />
+    <h2 class="card-title">Servicio a Domicilio</h2>
+    <p class="card-desc">Comodidad total con nuestro servicio a domicilio. Tu salud desde la tranquilidad de tu hogar.</p>
+  </div>
+</div>
+
+<style>
+.card-info {
+  background: #fff;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px 0 rgba(0, 60, 120, 0.10), 0 1.5px 6px 0 rgba(0,0,0,0.04);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.35s cubic-bezier(.4,0,.2,1), background 0.35s;
+  position: relative;
+}
+.card-info:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 32px 0 rgba(0, 60, 120, 0.18), 0 3px 12px 0 rgba(0,0,0,0.08);
+  background: linear-gradient(90deg, #e3f0ff 0%, #f8fbff 100%);
+}
+.card-img {
+  width: 4rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px 0 rgba(0, 60, 120, 0.10);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.card-info:hover .card-img {
+  box-shadow: 0 4px 16px 0 rgba(0, 60, 120, 0.18);
+  transform: scale(1.08) rotate(-2deg);
+}
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1565c0;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+  transition: color 0.3s;
+}
+.card-info:hover .card-title {
+  color: #0d47a1;
+}
+.card-desc {
+  color: #4a5568;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  transition: color 0.3s;
+}
+.card-info:hover .card-desc {
+  color: #263238;
+}
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
