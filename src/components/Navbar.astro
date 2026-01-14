@@ -47,11 +47,50 @@ import { getPublicPath, getPagePath } from "../utils/paths";
 </nav>
 
 <script>
-const menuToggle = document.getElementById('menu-toggle');
-const mobileMenu = document.getElementById('mobile-menu');
-const closeMenu = document.getElementById('close-menu');
-menuToggle.onclick = () => mobileMenu.classList.toggle('hidden');
-if (closeMenu) closeMenu.onclick = () => mobileMenu.classList.add('hidden');
+function initMenuToggle() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeMenu = document.getElementById('close-menu');
+  
+  if (!menuToggle || !mobileMenu) return;
+  
+  // Remove old listeners
+  const newMenuToggle = menuToggle.cloneNode(true);
+  menuToggle.replaceWith(newMenuToggle);
+  const newCloseMenu = closeMenu?.cloneNode(true);
+  if (closeMenu) closeMenu.replaceWith(newCloseMenu);
+  
+  const updatedMenuToggle = document.getElementById('menu-toggle');
+  const updatedCloseMenu = document.getElementById('close-menu');
+  
+  updatedMenuToggle.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+  
+  if (updatedCloseMenu) {
+    updatedCloseMenu.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  }
+  
+  // Close menu when clicking a link
+  const mobileLinks = mobileMenu.querySelectorAll('a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+}
+
+// Initialize on page load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initMenuToggle);
+} else {
+  initMenuToggle();
+}
+
+// Reinitialize on navigation (Astro's ClientRouter)
+document.addEventListener('astro:page-load', initMenuToggle);
 </script>
 
 <style>
