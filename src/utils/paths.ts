@@ -1,12 +1,17 @@
-// Helper para resolver rutas públicas con base path
+// Helper para resolver rutas públicas
+// En Vercel (sin base path): devuelve la ruta tal cual
+// En GitHub Pages (con base path): agrega el prefijo
 export const getPublicPath = (path: string): string => {
   const basePath = import.meta.env.BASE_URL || '/';
-  // Asegurar que la ruta comienza con /
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
-  // Retornar la ruta completa
-  return basePath === '/'
-    ? normalizedPath
-    : `${basePath.replace(/\/$/, '')}${normalizedPath}`;
+  
+  // Si el base path es solo '/', no agregar prefijo (Vercel)
+  if (basePath === '/') {
+    return normalizedPath;
+  }
+  
+  // Si hay base path (GitHub Pages), agregar el prefijo
+  return `${basePath.replace(/\/$/, '')}${normalizedPath}`;
 };
 
 // Helper para resolver rutas internas
@@ -14,12 +19,16 @@ export const getPagePath = (path: string): string => {
   const basePath = import.meta.env.BASE_URL || '/';
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
 
-  // Si es solo /, retornar base path
+  // Si es la página raíz
   if (normalizedPath === '/') {
     return basePath;
   }
 
-  return basePath === '/'
-    ? normalizedPath
-    : `${basePath.replace(/\/$/, '')}${normalizedPath}`;
+  // Si el base path es solo '/', devolver la ruta tal cual (Vercel)
+  if (basePath === '/') {
+    return normalizedPath;
+  }
+
+  // Si hay base path (GitHub Pages), agregar el prefijo
+  return `${basePath.replace(/\/$/, '')}${normalizedPath}`;
 };
