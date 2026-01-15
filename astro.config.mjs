@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://la-laboratorio.vercel.app',
+  site: 'https://laboratorioclinicorosarioarnedo.com',
   // No usar 'base' en Vercel - solo en GitHub Pages con subdirectorio
   vite: {
     plugins: [tailwindcss()],
